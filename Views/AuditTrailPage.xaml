@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INVApp.Views.AuditTrailPage"
+             Title="AuditTrailPage">
+
+    <StackLayout Padding="10">
+
+        <!-- Header -->
+        <Label Text="Product Change Log" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center"/>
+
+        <!-- CollectionView to display inventory logs -->
+        <CollectionView ItemsSource="{Binding InventoryLogs}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Frame BackgroundColor="{StaticResource FrameBackgroundColor}" 
+                           BorderColor="{StaticResource FrameBorderColor}" CornerRadius="10" Padding="10" Margin="5">
+                        <StackLayout>
+                            <Label Text="{Binding ChangeType}" FontSize="18" FontAttributes="Bold"/>
+                            <Label Text="{Binding Timestamp, StringFormat='{0:MM/dd/yyyy HH:mm}'}" FontSize="14"/>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="Old Stock:" FontAttributes="Bold"/>
+                                <Label Text="{Binding StockOldValue}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="New Stock:" FontAttributes="Bold"/>
+                                <Label Text="{Binding StockNewValue}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="Old Price:" FontAttributes="Bold"/>
+                                <Label Text="{Binding PriceOldValue}"/>
+                            </StackLayout>
+
+                            <StackLayout Orientation="Horizontal" Spacing="10">
+                                <Label Text="New Price:" FontAttributes="Bold"/>
+                                <Label Text="{Binding PriceNewValue}"/>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </StackLayout>
+</ContentPage>

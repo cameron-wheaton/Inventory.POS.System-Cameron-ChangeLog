@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="INVApp.ContentViews.NotificationBanner">
+    
+    <Frame x:Name="NotificationFrame"
+           BackgroundColor="{StaticResource WarningColor}"
+           BorderColor="{StaticResource WarningColor}"
+           HeightRequest="60"
+           IsVisible="False"
+           CornerRadius="10"
+           Padding="10"
+           Margin="10,10,10,0">
+        <Grid>
+            <Label x:Name="NotificationLabel"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   FontSize="13"
+                   VerticalOptions="Center"
+                   HorizontalOptions="StartAndExpand"/>
+            <Button Text="✕"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    VerticalOptions="Center"
+                    HorizontalOptions="End"
+                    Clicked="CloseNotificationClicked"
+                    HeightRequest="60"/>
+        </Grid>
+    </Frame>
+</ContentView>

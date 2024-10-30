@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="INVApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:INVApp.Views"
+    xmlns:notify="clr-namespace:INVApp.ContentViews"
+    Shell.FlyoutBehavior="Disabled"
+    Title="INVApp">
+
+    <!-- Define the TabBar -->
+    <TabBar>
+
+        <!-- Point Of Sale Tab -->
+        <ShellContent Title="Settings" Icon="settings_icon.png"
+                ContentTemplate="{DataTemplate local:SettingsPage}" />
+
+        <!-- Stock Intake Tab -->
+        <ShellContent Title="Stock Take" Icon="home_icon.png"
+                ContentTemplate="{DataTemplate local:StockIntakePage}" />
+
+        <!-- Stock Overview Tab -->
+        <ShellContent Title="Overview" Icon="overview_icon.png"
+                ContentTemplate="{DataTemplate local:StockOverviewPage}"/>
+    </TabBar>
+
+</Shell>
